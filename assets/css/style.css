@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header.hero {
+    text-align: center;
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+header img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+header h1 {
+    margin: 0.5rem 0;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.projects .project {
+    display: inline-block;
+    width: 45%;
+    margin: 2%;
+    text-align: center;
+}
+
+.projects img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: #fff;
+}
