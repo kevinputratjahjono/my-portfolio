@@ -16,5 +16,5 @@ Ini adalah repository untuk website portfolio saya. Website ini berisi informasi
 Kunjungi: [https://username.github.io/my-portfolio](https://username.github.io/my-portfolio)
 
 ## Kontak
-- **Email:** email@domain.com
-- **GitHub:** [https://github.com/username](https://github.com/username)
+- **Email:** vinixalexsander@gmail.com
+- **GitHub:** [https://github.com/kevinputratjahjono](https://github.com/kevinputratjahjono)
