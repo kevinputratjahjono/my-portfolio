@@ -1,45 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Kevin Putra</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Kevin Putra Tjahjono - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="hero">
-        <img src="assets/images/profile.jpg" alt="Foto Profil">
+
+    <header>
         <h1>Kevin Putra Tjahjono</h1>
-        <p>Desainer Web | Pengembang | Beta Tester | Content Creator</p>
+        <p>Mahasiswa Sistem Informasi | Web Developer</p>
     </header>
 
-    <main>
-        <section class="about">
-            <h2>Tentang Saya</h2>
-            <p>Halo, saya Kevin Putra Tjahjono, seorang mahasiswa Sistem Informasi yang saat ini menempuh pendidikan di Universitas Trisakti, jurusan Sistem Informasi (S1). Saya tinggal di Cibinong, Kabupaten Bogor, dan memiliki minat besar dalam dunia teknologi informasi, khususnya dalam pengembangan web dan aplikasi. Selama masa pendidikan, saya aktif dalam organisasi seperti OSIS SMA Mardi Waluya Cibinong, yang mengasah kemampuan saya dalam kepemimpinan dan kerja sama tim. Saya juga terlibat sebagai bagian dari tim inti dalam beberapa proyek pembuatan konten di platform YouTube, yang memberikan pengalaman nyata dalam manajemen proyek kreatif. Keahlian utama saya meliputi problem solving, pengembangan web, dan ketepatan waktu dalam menyelesaikan pekerjaan. Saat ini, saya fokus untuk mendalami pengembangan aplikasi berbasis AI dan pengembangan aplikasi mobile, dengan tujuan menciptakan solusi inovatif yang bermanfaat bagi banyak orang. Saya juga aktif mengikuti berbagai webinar di bidang terkait, yang memperluas wawasan saya tentang tren terbaru di dunia teknologi. Dalam bekerja, saya percaya bahwa kerja keras dan kolaborasi adalah kunci keberhasilan. Di waktu luang, saya menyalurkan kreativitas melalui gambar digital dan musicalisasi digital. Jangan ragu untuk menjelajahi proyek-proyek saya di bawah ini atau menghubungi saya untuk berdiskusi lebih lanjut. 😊.</p>
-        </section>
+    <nav>
+        <ul>
+            <li><a href="#about">Tentang Saya</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
 
-        <section class="projects">
-            <h2>Proyek Saya</h2>
-            <div class="project">
-                <img src="assets/images/project1.jpg" alt="Proyek 1">
-                <h3>Model Figma MitGLOS.edu</h3>
-                <p>Mendesign model figma untuk website MitGLOS.edu</p>
-            </div>
-            <div class="project">
-                <img src="assets/images/project2.jpg" alt="Proyek 2">
-                <h3>Streamlit Visualisasi Sederhana</h3>
-                <p>Visualisasi sederhana dengan menggunakan bahasa Python dan di integrasikan dengan streamlit</p>
-            </div>
-        </section>
-    </main>
+    <section id="about">
+        <h2>Tentang Saya</h2>
+        <p>Halo, saya Kevin Putra Tjahjono, mahasiswa Sistem Informasi di Universitas Trisakti...</p>
+    </section>
+
+    <section id="projects">
+        <h2>Proyek</h2>
+        <p>Beberapa proyek yang pernah saya kerjakan...</p>
+    </section>
+
+    <section id="contact">
+        <h2>Kontak</h2>
+        <p>Hubungi saya melalui:</p>
+        <a href="https://github.com/kevinputratjahjono" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vinixailast@gmail.com&su=Halo%20Kevin&body=Saya%20ingin%20membahas%20lebih%20lanjut%20tentang%20portfolio%20Anda." target="_blank" rel="noopener noreferrer">Email</a>
+    </section>
 
     <footer>
         <p>© 2025 Kevin Putra Tjahjono | 
             <a href="https://github.com/kevinputratjahjono" target="_blank" rel="noopener noreferrer">GitHub</a> | 
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vinixailast@gmail.com&su=Halo%20Kevin&body=Saya%20ingin%20membahas%20lebih%20lanjut%20tentang%20portfolio%20Anda." target="_blank" rel="noopener noreferrer">Email</a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vinixailast@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </p>
     </footer>
+
+    <!-- Live2D Canvas -->
+    <canvas id="live2dCanvas"></canvas>
+
+    <!-- Live2D Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/pixi.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/index.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const app = new PIXI.Application({
+                view: document.getElementById("live2dCanvas"),
+                transparent: true,
+                width: 300,
+                height: 400
+            });
+
+            document.body.appendChild(app.view);
+
+            PIXI.live2d.Live2DModel.from("assets/live2d/model.json").then(model => {
+                app.stage.addChild(model);
+                model.scale.set(0.3);
+                model.anchor.set(0.5);
+                model.position.set(app.renderer.width / 2, app.renderer.height / 2);
+            });
+        });
+    </script>
 
 </body>
 </html>
